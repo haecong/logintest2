@@ -34,8 +34,8 @@ public class LoginService {
             StringBuilder sb = new StringBuilder();
             sb.append("grant_type=authorization_code");
 
-            sb.append("&client_id=8c3b653106a5cfce99f5bb9e33325793");
-            sb.append("&redirect_uri=http://localhost:8080/login");
+            sb.append("&client_id=<rest api키>");
+            sb.append("&redirect_uri=<redirect url>");
 
             sb.append("&code=" + authorize_code);
             bw.write(sb.toString());
