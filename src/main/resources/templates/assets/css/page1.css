@@ -1,0 +1,67 @@
+/***** sub03_자전거안전교육 *****/
+	/* sub0301_교육자료 */
+	.down_btn { border:1px solid #ccc; padding:30px 0; text-align:center; }
+	.down_btn a { height:80px; background:#2d69cd url('./../img/content/sub03/btn_eff.png') no-repeat right bottom; font-size:22px; padding-top:10px; padding-left:20px; padding-right:20px; margin-right:1%; }
+	.down_btn a img { vertical-align:middle; margin:0 0 0 10px; }
+	.down_btn a.down_btn02 { background:#168592 url('./../img/content/sub03/btn_eff.png') no-repeat right bottom; }
+	.down_btn a.down_btn03 { background:#169285 url('./../img/content/sub03/btn_eff.png') no-repeat right bottom; }
+	.video_box { border:1px solid #ccc; padding:30px; text-align:center; }
+	.video_box .video { width:90%; }
+	.video_box a img { vertical-align:middle; margin:0 0 0 10px; }
+		/* 태블릿 */
+		@media only screen and (max-width:1023px){
+			.down_btn a { font-size:20px; padding-left:15px; padding-right:15px; }
+		}
+		/* 모바일 */
+		@media only screen and (max-width:767px){
+			.down_btn { padding:30px; }
+			.down_btn a { height:70px; background:#2d69cd url('./../img/content/sub03/btn_eff.png') no-repeat right bottom; font-size:18px; padding:10px;margin:0 0 10px; display:block; }
+			.video_box a img {width:20px;}
+		}
+	
+	/* sub0302_자전거안전이용수칙 */
+	.safety_list { overflow:hidden; background:#1f88ca; }
+	.safety_list .safety_five { background:#1f88ca; float:left; width:45%; padding:50px 40px; }
+	.safety_list .safety_five h6 { color:#fffb01; font-size:30px; text-align:center; margin:0 0 66px 0; }
+	.safety_list .safety_five ul { list-style:none; }
+	.safety_list .safety_five ul li { color:#fff; margin:0 0 45px 0; font-size:20px; }
+	.safety_list .safety_five ul li img { vertical-align:middle; padding:0 10px; }
+	.safety_list .safety_driver { background:#1da8bc; float:left; width:55%; padding:30px; }
+	.safety_list .safety_driver div.safety_subject { border-radius:10px; padding:40px; background:#fff; }
+	.safety_list .safety_driver h6 { color:#1f88ca; font-size:24px; text-align:center; margin:0 0 30px 0; background:url('./../img/content/safety_icon.png') no-repeat 0 bottom; background-size:100%; }
+	.safety_list .safety_driver h6 span { font-size:18px; display:block; }
+	.safety_list .safety_driver ul { list-style:none; background:#fff; }
+	.safety_list .safety_driver ul li { color:#444; margin:0 0 20px 0; font-size:16px;  }
+	.safety_list .safety_driver ul li img { vertical-align:middle; padding:0 10px; }
+	.safety_list .safety_driver ul li strong { color:red; }
+	.safety_list .safety_driver ul li p { font-size:14px; padding:0 0 0 15px; }
+	.safety_list .safety_driver .safety_driver_logo { text-align:center; margin:0; padding:0; }
+	.text_photo { overflow:hidden; }
+	.text_photo div { float:left; width:53%; }
+	.text_photo img { float:right; width:45%;}
+	.transmission { border:1px solid #ccc; padding:40px; }
+	.transmission img { width:98%; }
+	.transmission p { text-align:right; }
+		/* 태블릿 */
+		@media only screen and (max-width:1023px){
+			/* .safety_list .safety_five ul li { font-size:18px; }
+			.safety_list .safety_driver ul li { font-size:14px;  }
+			.safety_list .safety_driver ul li p { font-size:13px; } */
+			.certification_icon span { font-size:16px; }
+		}
+		/* 모바일 */
+		@media only screen and (max-width:767px){
+			.safety_list .safety_five {float:none;width:100%;}
+			.safety_list .safety_five h6 { font-size:22px; margin:0 0 40px 0; }
+			.safety_list .safety_five ul li { margin:0 0 30px 0;/*  font-size:14px;   */}
+			.safety_list .safety_driver {float:none;width:100%;}
+			.safety_list .safety_driver div.safety_subject { padding:20px; }
+			.safety_list .safety_driver h6 { /* font-size:18px; */ margin:0 0 20px 0; }
+			.safety_list .safety_driver h6 span { /* font-size:13px; */ }
+			.safety_list .safety_driver ul li { color:#444; margin:0 0 5px 0;/*  font-size:13px; */  }
+			.safety_list .safety_driver ul li p { /* font-size:12px; */ padding:0 0 0 10px; }
+			.text_photo div { clear:both; width:100%; }
+			.text_photo img { clear:both; width:100%; margin:20px 0; }
+			.transmission {padding:20px;}
+		}
+	

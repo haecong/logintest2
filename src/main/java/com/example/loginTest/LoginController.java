@@ -42,8 +42,7 @@ public class LoginController {
         model.addAttribute("kakaoN", userInfo.getKname());
         model.addAttribute("kakaoE", userInfo.getKemail());
 
-        return "testPage";
+        return "index";
     }
 
 }
-

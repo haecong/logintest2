@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<!--
+   Massively by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>review - To go somewhere by bicycle</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <!-- css -->
+   
+   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" />
+   <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" />
+   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" />
+
+      <link rel="stylesheet" href="\src\main\resources\templates\assets\css\main.css\" />
+      <noscript><link rel="stylesheet" href="\src\main\resources\templates\assets\css\noscript.css\" /></noscript>
+   </head>
+   <body class="is-preload">
+
+      <!-- Wrapper -->
+         <div id="wrapper">
+
+            <!-- Header -->
+               <header id="header">
+                  <a href="index.html" class="logo">BIKE</a>
+               </header>
+
+            <!-- Nav -->
+               <nav id="nav">
+                  <ul class="links">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active"><a href="reviews.html">게시판</a></li>
+                            <li><a href="elements.html">코드 모음</a></li>
+                            <li><a href="write.html">글 작성</a></li>
+                            <li><a href="page1.html">자전거길 및 안전교육</a></li>
+                         </ul>
+                  <ul class="icons">
+                     <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                     <li><a href="login.html" class="loginIcon"><span class="label"><img src="\src\main\resources\templates\images\kakao_login_small.png" alt="kakaoLogin" /></span></a></li>
+                   </ul>
+               </nav>
+
+            <!-- Main -->
+               <div id="main">
+
+                  <!-- Post -->
+                     <section class="post">
+                        <header class="major">
+                           <h1>자전거길 체험후기</h1>
+                           <p>-체험후기를 남겨주세요 </p>
+                        </header>
+                     </section>
+
+                            <form id="frm" name="frm" class="form-horizontal" action="/bbs/list.do?key=2008148348515" method="post">
+                                <input type="hidden" name="bbsSn">
+                                <input type="hidden" name="key" value="2008148348515">
+                                
+                                <input id="pageIndex" name="pageIndex" type="hidden" value="1"/>
+                                
+                            
+                                <!-- 게시판_목록 -->
+                                <div class="fs_list_box">
+                                    <h4 class="tith5">- 행복했던 자전거 여행후기를 올려주세요.</h4>
+                                    <h4 class="tith5">- 인증 요청은 질의/응답 게시판에 남겨주시기 바랍니다.</h4>
+                                    <table class="tableB">
+                                        <caption>
+                                            <strong>자전거길 체험후기 검색하기</strong>
+                                        </caption>
+                                        <colgroup>
+                                            <col style="width:25%;">
+                                            <col style="width:75%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row"><label for="keyword">자전거길 구분</label></th>
+                                                <td class="bd_none">
+                                                    <div class="ft-l wh30p">
+                                                        <select name="sc_ctgrySn" class="select_style wh99p" title="자전거길 검색구분 선택" id="sc_ctgrySn" onchange="subCtgry(this.value);">
+                                                                <option value="">전체</option>
+                                                                
+                                                                    
+                                                                        <option value="8" >국토종주 자전거길</option>
+                                                                    
+                                                                        <option value="9" >지자체 명품 자전거길</option>
+                                                                    
+                                                                        <option value="10" >바다를 품은 섬 자전거길</option>
+                                                                    
+                                                                        <option value="33" >기타</option>
+                                                                    
+                                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="ft-l wh50p">
+                                                        <select name="sc_ctgrySubSn" class="select_style wh99p" title="검색구분 선택(상세)" id="sc_ctgrySubSn">
+                                                            <option value="">전체</option>
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--버튼
+                                    <div class="actions">
+                                        <a class="primary" href="#none" onclick="fn_egov_link_page(1); return false;">선택보기</a>
+                                    </div>
+                                    -->
+                            
+                                        <!-- 검색 -->
+                                    <div class="notice_search mt50">
+                                        <fieldset>
+                                            <div class="search_area">
+                                                <select id="sc" name="sc" class="select_style wh120" title="검색구분 선택">
+                                                    <option value="" selected="selected">전체</option>
+                                                        
+                                                            <option value="BBS_SJ">제목</option>
+                                                            <option value="REGISTER_NM">작성자</option>
+                                                            <option value="BBS_CN">내용</option>
+                                                </select>
+                            
+                                                <label for="sw">
+                                                    <input id="sw" name="sw" class="input_style" title="검색어 입력" onkeypress="if(event.keyCode == 13){ fn_egov_link_page(1); return false; }" placeholder="검색어 입력" type="text" value=""/>
+                                                </label>
+                                                <input value="검색" type="submit" class="btn_search">
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <!-- //검색 -->
+                                
+                            
+                                    <!--리스트-->
+                                    <div class="board_list">
+                                       
+                                        <table class="board_list_table ta-c">
+                                            <caption>
+                                                <strong>게시판 목록</strong>
+                                                <p style="text-align: center;">
+                                                    게시판 목록으로 번호, 구분 , 제목, 작성자 , 등록일에 대한 정보를 표시합니다.
+                                                </p>
+                                                 <!--버튼-->
+                                            <ul class="actions small"  style="display: flex; float: right;">
+                                                <a  class="button primary small" onclick="location"href='write.html'>글 작성</a>
+                                           </div>
+                                            </caption>
+                                          
+                                            <colgroup>
+                                                <col style="width:70px;" />
+                                                
+                                                        <col style="width:300px;">
+                                                        <col style="width:px;">
+                                                        <col style="width:130px;">
+                                                        <col style="width:100px;">
+                                                    
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                        <th scope="col">번호</th>
+                                                            <th scope="col">구분</th>
+                                                            <th scope="col">제목</th>
+                                                            <th scope="col">작성자</th>
+                                                            <th scope="col">등록일</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                    
+                                                <tr th:each="board : ${boardList}">
+                                                    <td class="listNum"></td>
+                                                    
+                                                            <td class="category" >
+                                                            
+                                                            <div class="viewbox">
+                                                                <a href="#none">
+                                                                </a>
+                                                            </div>
+                                                            </td>
+                                                        
+                                                            
+                                                            <td class="bbsTitle" style="text-align:left;">
+                                                            
+                                                            <div class="viewbox">
+                                                                <a th:href="@{/read/{bid}(bid=${board.bid})}" th:text="${board.title}">
+                                                                <span onclick="goView('34109', 'N');" style="cursor:pointer;">
+                                                                </span>
+                                                                </a>
+                                                            </div>
+                                                            </td>
+                                                        
+                                                            <td class="nomal" >
+                                                            
+                                                            <div class="viewbox">
+                                                                <td th:text="${board.author}"></td>
+                                                               
+                                                            </div>
+                                                            </td>
+                                                        
+                                                            <td class="nomal" >
+                                                                <div class="viewbox">
+                                                                    <td th:text="${board.content}"></td>
+                                                                    <span onclick="goView('34109', 'N');" style="cursor:pointer;">
+                                                                    </span>
+                                                                    
+                                                                </div>
+                                                                </td>
+                                                            
+                                                        
+                                                            <td class="nomal" >
+                                                            
+                                                            <div class="viewbox">
+                                                                <td th:text="${board.date}"></td>
+                                                                </a>
+                                                            </div>
+                                                            </td>
+                                                            <!--<div class="board_list">
+                                                                    <th:block th:if="${#lists.size(boardList) != 0}">
+                                                                        <div th:each="board, status : ${boardList}">
+                                                                            <div>[[${board.rowNumber}]]</div>
+                                                                            
+                                                                                <span th:text="${board.title}"></span>
+                                                                                <a th:href="@{/board/boardDetail(boardNum=${board.boardNum})}">[[${board.title}]]
+                                                                                <span th:text="${board.replyCnt == 0 ? '' : '[' + board.replyCnt + ']'}"></span>
+                                                                            </div>
+                                                                            <div>[[${board.author}]]</div>
+                                                                            <div>[[${board.regDate}]]</div>
+                                                                            <div>[[${board.readCnt}]]</div>
+                                                                        </div>
+                                                                    </th:block>
+                                                                    <th:block th:unless="${#lists.size(boardList) != 0}">
+                                                                        <div class="empty_board">작성된 글이 없습니다.</div>
+                                                                    </th:block>
+                                                                </div>-->
+                                                        
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                            
+                                    <div class="actions">
+                                        
+                                    
+                                    <div class="pagination_box" class="primary">
+                                        <nav style="display: flex; justify-content: center;">
+                                            <ul class="pagination" class="primary">
+                                                <li class="prev_first"><a href="#none" title="처음 페이지" onclick="fn_egov_link_page(1); return false;">
+                                                    <span>처음 페이지</span></a></li>
+                                                    <li class="prev"><a href="#none" title="이전 페이지" onclick="fn_egov_link_page(1); return false;">
+                                                        <span>이전 페이지</span></a></li>
+                                                        <li class="num"><a href="#none" class="on" title="현재 페이지"><b>1</b></a></li>
+                                                        <li class="num"><a href="#none" title="2 페이지로 이동" onclick="fn_egov_link_page(2); return false;">2</a></li>
+                                                        <li class="num"><a href="#none" title="3 페이지로 이동" onclick="fn_egov_link_page(3); return false;">3</a></li>
+                                                        <li class="num"><a href="#none" title="4 페이지로 이동" onclick="fn_egov_link_page(4); return false;">4</a></li>
+                                                        <li class="num"><a href="#none" title="5 페이지로 이동" onclick="fn_egov_link_page(5); return false;">5</a></li>
+                                                        <li class="next"><a href="#none" title="다음 페이지" onclick="fn_egov_link_page(6); return false;"><span>다음 페이지</span></a></li>
+                                                        <li class="next_last"><a href="#none" title="마지막 페이지" onclick="fn_egov_link_page(145); return false;"><span>마지막 페이지</span></a></li>
+                            
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    </div>
+                                </div>
+                            </form>
+                                            
+
+               </div>
+
+                    <!-- Footer -->
+                    <footer id="footer">
+						<footer id="footer">
+                            <section class="split contact">
+                               <section class="alt">
+                                  <h3>Address</h3>
+                                  <p>경기도 용인시 기흥구 강남로 40<br />
+                                  강남대학교 이공관</p>
+                               </section>
+                               <section>
+                                  <h3>School number</h3>
+                                  <p>소프트웨어응용학부 202084020 구자은<br/>
+                                    소프트웨어응용학부 202084020 양은지<br/>
+                                    소프트웨어응용학부 202084020 이채원<br>
+                                    소프트웨어응용학부 202104311 이해원</p>
+                               </section>
+                            </section>
+                         </footer>
+
+            <!-- Copyright -->
+               <div id="copyright">
+                  <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+               </div>
+
+         </div>
+
+                        <!-- Scripts -->
+                        <script src="\src\main\resources\templates\assets\js\jquery.min.js"></script>
+                        <script src="\src\main\resources\templates\assets\js\jquery.scrollex.min.js"></script>
+                        <script src="\src\main\resources\templates\assets\js\jquery.scrolly.min.js"></script>
+                        <script src="\src\main\resources\templates\assets\js\browser.min.js"></script>
+                        <script src="\src\main\resources\templates\assets\js\breakpoints.min.js"></script>
+                        <script src="\src\main\resources\templates\assets\js\util.js"></script>
+                        <script src="\src\main\resources\templates\assets\js\main.js"></script>
+
+   </body>
+</html>

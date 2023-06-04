@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>게시물 상세페이지</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="\src\main\resources\templates\assets\css\main.css\" />
+		<link rel="javascript" href="\src\main\resources\templates\assets\js\board.js\" />
+		<noscript><link rel="stylesheet" href="\src\main\resources\templates\assets\css\noscript.css\" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo">BIKE</a>
+                </header>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul class="links">
+                        <ul class="links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="reviews.html">게시판</a></li>
+                            <li><a href="elements.html">코드 모음</a></li>
+                            <li><a href="write.html">글 작성</a></li>
+                            <li><a href="page1.html">자전거길 및 안전교육</a></li>
+                         </ul>
+                     </ul>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="login.html" class="loginIcon"><span class="label"><img src="\src\main\resources\templates\images\kakao_login_small.png" alt="kakaoLogin" /></span></a></li>
+
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								
+								<header class="major">
+									<!-- <span class="date">April 25, 2017</span> -->
+								</header>
+								<div style="">
+									<ul class="actions small" style="float: right;">
+										<li><a th:href="@{/delete/{bid}(bid=${board.bid})}" class="button primary small" id="deleteBtn">삭제</a></li>
+										<li><a th:href="@{/edit/{bid}(bid=${board.bid})}" class="button small">수정</a></li>
+									</ul>
+							
+								</div>
+                                <div th:if="${board}">
+                                    <h1 th:text="${board.title}"></h1><br/>
+                                    <p>작성자 <span th:text="${board.author}"></span></p>
+                                    <p>내용 <span th:text="${board.content}"></span></p>
+                                  </div>
+								<!-- <div class="image main"></div>
+                                <p>내용: <span th:text="${board.content}"></span></p> -->
+                            </section>
+                            <div style="">
+								<ul class="actions" style="float: right;">
+									<li><a href="reviews.html" class="button" >목록</a></li>
+                                </ul>
+                               
+                            </div>
+							
+
+								<!-- 댓글 목록 -->
+								<div th:if="${boardCMT != null and not #lists.isEmpty(boardCMT)}">
+								<h3>댓글 목록</h3>
+								<table>
+									<thead>
+									<tr>
+									<th>작성자</th>
+									<th>내용</th>
+									<th>작성 시간</th>
+									<th></th> <!-- 삭제 버튼을 위한 빈 컬럼 -->
+									</tr>
+									</thead>
+									<tbody>
+									<tr th:each="comment : ${boardCMT}">
+									<td th:text="${comment.writerName}"></td>
+									<td th:text="${comment.cmtContent}"></td>
+									<td th:text="${comment.cmtTime}"></td>
+									</tr>
+									</tbody>
+								</table>
+									<div>
+										<ul class="actions small" style="float: right;">
+											<li><a th:href="@{/delete/{bid}(bid=${board.bid})}" >
+												<form th:action="@{/comment/delete}" method="post">
+													<input type="hidden" name="bid" th:value="${board.bid}" />
+													<input type="hidden" name="cmtId" th:value="${comment.cmtId}" />
+													<button type="submit" class="button primary small" id="deleteBtn">삭제</button>
+													</form></a></li>
+											<li><a th:href="@{/edit/{bid}(bid=${board.bid})}">
+												<form th:action="@{/comment/edit}" method="post">
+													<input type="hidden" name="bid" th:value="${board.bid}" />
+													<input type="hidden" name="cmtId" th:value="${comment.cmtId}" />
+													<button type="submit" class="button small" >수정</button>
+												</form>
+											</a></li>
+										</ul>
+										</div>
+										<div>
+								
+
+									<h3>댓글 작성</h3>
+									<form>
+										<div class="actions small">
+											<label for="writerName">작성자:</label>
+											<input type="text" id="writerName" name="writerName" required />
+										
+											<label for="comment">댓글 내용:</label>
+											<textarea id="comment" name="comment" rows="1" cols="10" required></textarea><br>
+										
+										<button class="button small" type="submit" style="float: right;">댓글 작성</button>
+										</div>
+									</form>
+								
+								</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<footer id="footer">
+						<section class="split contact">
+						   <section class="alt">
+							  <h3>Address</h3>
+							  <p>경기도 용인시 기흥구 강남로 40<br />
+							  강남대학교 이공관</p>
+						   </section>
+						   <section>
+							<h3>School number</h3>
+							<p>소프트웨어응용학부 202084020 구자은<br/>
+							  소프트웨어응용학부 202084020 양은지<br/>
+							  소프트웨어응용학부 202084020 이채원<br>
+							  소프트웨어응용학부 202104311 이해원</p>
+						 </section>
+						</section>
+					 </footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+				<!-- Scripts -->
+				<script src="\src\main\resources\templates\assets\js\jquery.min.js"></script>
+				<script src="\src\main\resources\templates\assets\js\jquery.scrollex.min.js"></script>
+				<script src="\src\main\resources\templates\assets\js\jquery.scrolly.min.js"></script>
+				<script src="\src\main\resources\templates\assets\js\browser.min.js"></script>
+				<script src="\src\main\resources\templates\assets\js\breakpoints.min.js"></script>
+				<script src="\src\main\resources\templates\assets\js\util.js"></script>
+				<script src="\src\main\resources\templates\assets\js\main.js"></script>
+
+	</body>
+</html>

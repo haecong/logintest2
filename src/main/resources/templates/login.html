@@ -1,21 +1,80 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<style>
+	#map-preview {
+	  width: 100%;
+	  height: 500px; /* 미리보기 화면의 높이를 조정합니다. */
+	}
+  </style>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
+
+	<title>로그인</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- 카카오로그인 -->
+	<!--        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="\src\main\resources\templates\assets\css\main.css\" />
+	<noscript><link rel="stylesheet" href="\src\main\resources\templates\assets\css\noscript.css\" /></noscript>
 </head>
-<body>
-<!-- 카카오 로그인 -->
-<a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=<rest api키>&redirect_uri=<redirect url>&response_type=code">
-	<!-- REST_API키 및 REDIRECT_URi는 본인걸로 수정하세요 -->
-	<!-- 저는 redirect_uri을 http://localhost:8080/login로 했습니다. -->
-	<!-- 본인걸로 수정 시 띄어쓰기 절대 하지 마세요. 오류납니다. -->
+<body class="is-preload">
 
-	<img src="images/kakao_login_large_narrow.png" style="height:60px">
+<!-- Wrapper -->
+<div id="wrapper">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="logo">BIKE</a>
+	</header>
+	<!-- Nav -->
+	<nav id="nav">
+		<ul class="links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="reviews.html">게시판</a></li>
+			<li><a href="elements.html">코드 모음</a></li>
+			<li><a href="write.html">글 작성</a></li>
+			<li><a href="page1.html">자전거길 및 안전교육</a></li>
+		</ul>
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="login.html" class="loginIcon"><span class="label"><img src="\src\main\resources\templates\images\kakao_login_small.png" alt="kakaoLogin" /></span></a></li>
+		</ul>
+	</nav>
+
+	<!-- 카카오 로그인 -->
+	<a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=873efa8c022985c717a01b3e9145075e&redirect_uri=http://localhost:8080/login&response_type=code">
+		<!-- REST_API키 및 REDIRECT_URi는 본인걸로 수정하세요 -->
+		<!-- 저는 redirect_uri을 http://localhost:8080/login로 했습니다. -->
+		<!-- 본인걸로 수정 시 띄어쓰기 절대 하지 마세요. 오류납니다. -->
+
+		<img src="\src\main\resources\templates\images\kakao_login_large_wide.png" style="height:60px">
 
 
-	<!-- 이미지는 카카오 개발자센터에서 제공하는 login 이미지를 사용했습니다. -->
+		<!-- 이미지는 카카오 개발자센터에서 제공하는 login 이미지를 사용했습니다. -->
 
-</a>
+	</a>
+
+
+	<!-- Copyright
+        <div id="copyright">
+            <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+        </div> -->
+
+</div>
+
+<!-- Scripts -->
+<script src="\src\main\resources\templates\assets\js\jquery.min.js"></script>
+<script src="\src\main\resources\templates\assets\js\jquery.scrollex.min.js"></script>
+<script src="\src\main\resources\templates\assets\js\jquery.scrolly.min.js"></script>
+<script src="\src\main\resources\templates\assets\js\browser.min.js"></script>
+<script src="\src\main\resources\templates\assets\js\breakpoints.min.js"></script>
+<script src="\src\main\resources\templates\assets\js\util.js"></script>
+<script src="\src\main\resources\templates\assets\js\main.js"></script>
+
 </body>
 </html>
